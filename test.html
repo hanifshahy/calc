@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button {
+      padding: 10px 30px;
+      font-size: 40px;
+    }
+
+    input ,#result{
+      padding: 10px;
+      background-color: wheat;
+    }
+
+    body {
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+
+<body>
+  <span>
+    <input value="0" type="number" name="inp1" id="inp1">
+    <span id="operator"></span>
+    <input value="0" type="number" name="inp2" id="inp2">
+    =
+    <span id="result">Result</span>
+  </span>
+  <br><br>
+  <button onclick="add()">+</button>
+  <button onclick="sub()">-</button>
+  <button onclick="mul()">*</button>
+  <button onclick="div()">/</button>
+  <script>
+    function insertResult(x) {
+      let res = document.getElementById('result');
+      res.innerHTML = x;
+    }
+    function insertOperator(x) {
+      document.getElementById('operator').innerHTML = x;
+    }
+    function inp1() {
+      let x = document.getElementById('inp1');
+      return x.value;
+    }
+    function inp2() {
+      let x = document.getElementById('inp2');
+      return x.value;
+    }
+    function add() {
+      insertOperator('+');
+      insertResult(parseInt(inp1()) + parseInt(inp2()));
+
+    }
+    function sub() {
+      insertOperator('-');
+      insertResult(parseInt(inp1()) - parseInt(inp2()));
+    }
+    function mul() {
+      insertOperator('*');
+      insertResult(parseInt(inp1()) * parseInt(inp2()));
+    }
+    function div() {
+      insertOperator('/');
+      insertResult(parseInt(inp1()) / parseInt(inp2()));
+    }
+  </script>
+</body>
+
+</html>
